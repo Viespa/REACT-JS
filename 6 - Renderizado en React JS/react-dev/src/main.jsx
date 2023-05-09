@@ -6,4 +6,6 @@ import App from "./App";
 
 const container = document.getElementById("root");
 
+
+console.log(<div className="hola">ASD</div>)
 ReactDOM.render(<App></App>, container);
