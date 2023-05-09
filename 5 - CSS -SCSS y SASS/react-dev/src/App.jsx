@@ -1,10 +1,9 @@
-import { Fragment } from "react";
 import VideoItem from "./components/VideoItem";
 import VideoList from "./components/VideoList";
-
+import styles from './App.module.css';
 
 const App = () => (
-    <Fragment>
+    <div className={styles.container}>
         <VideoList title='Curso de React'>
             <VideoItem 
                 title='Componentes' 
@@ -36,7 +35,7 @@ const App = () => (
     <VideoList title='Curso de React'>
        
     </VideoList>
-</Fragment>
+</div>
     
 );
 
