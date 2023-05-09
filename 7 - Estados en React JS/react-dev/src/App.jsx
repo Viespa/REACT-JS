@@ -1,44 +1,30 @@
-import VideoItem from "./components/VideoItem";
-import VideoList from "./components/VideoList";
-import styles from './App.module.css';
+import {useState} from 'react';
+
+const getInitialLikes = () =>{
+    console.log('getInitialLikes');
+    return 12;
+}
+
+const Likes = () =>{
+
+    console.log("Render Likes")
+
+    const [likes ,setLikes] = useState(0);
+    
+    return <Button 
+                onClick={() => setLikes(likes + 1)}>
+                {likes} likes
+            </Button>
+}
+
+const Button = ({onClick, children}) => {
+    console.log("Render Button");
+    return <button onClick={onClick}>{children}</button>
+}
 
 const App = () =>{
-    console.log('Render App')
- return(
-    <div className={styles.container}>
-        <VideoList title='Curso de React'>
-            <VideoItem 
-                title='Componentes' 
-                duration={2760} 
-                upldoadDate={new Date(2023, 2, 30)}
-                description="Componentes en react" >
-            </VideoItem>
-            <VideoItem 
-                title='UseState' 
-                duration={3145} 
-                upldoadDate={new Date(2024, 5, 3)} 
-                description="Como utilizar estados en react" >
-            </VideoItem>
-        </VideoList>
-        <VideoList title='Curso de React'>
-        <VideoItem 
-            title='Componentes' 
-            duration={2760} 
-            upldoadDate={new Date(2023, 2, 30)}
-            description="Componentes en react" >
-        </VideoItem>
-        <VideoItem 
-            title='UseState' 
-            duration={3145} 
-            upldoadDate={new Date(2024, 5, 3)} 
-            description="Como utilizar estados en react" >
-        </VideoItem>
-    </VideoList>
-    <VideoList title='Curso de React'>
-       
-    </VideoList>
-</div>
-    
-)};
+    console.log("Render App")
+ return <Likes/>;
+};
 
 export default App;
